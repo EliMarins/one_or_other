@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:one_or_other/widgets/logo.widget.dart';
 
+import 'widgets/input.widget.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -22,46 +24,89 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   var _gasCtrl = new MoneyMaskedTextController();
+  var _alcCtrl = new MoneyMaskedTextController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Color(0xff121214),
       body: ListView(
         children: <Widget>[
           Logo(),
-          Row(
-            children: <Widget>[
-              Container(
-                width: 100,
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "Gasosa:",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 35,
-                      fontFamily: "Big Shoulders Display"),
+          Container(
+            margin: EdgeInsets.all(30),
+            decoration: BoxDecoration(
+                color: Color(0xff00ff5f),
+                borderRadius: BorderRadius.circular(
+                  25,
+                )),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 50,
                 ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: TextFormField(
-                  controller: _gasCtrl,
-                  keyboardType: TextInputType.number,
+                Text(
+                  "Compensa usar álcool",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 45,
+                    color: Colors.black.withOpacity(1.0),
+                    fontSize: 40,
                     fontFamily: "Big Shoulders Display",
                   ),
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                    margin: EdgeInsets.all(30),
+                    height: 50,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Color(0xff262626),
+                        borderRadius: BorderRadius.circular(
+                          60,
+                        )),
+                    child: FlatButton(
+                      child: Text(
+                        "Calcular Novamente?",
+                        style: TextStyle(
+                          color: Color(0xff00ff5f),
+                          fontSize: 27,
+                          fontFamily: "Big Shoulders Display",
+                        ),
+                      ),
+                      onPressed: () {},
+                    ))
+              ],
+            ),
+          ),
+          Input(
+            ctrl: _gasCtrl,
+            label: "Gasosa",
+          ),
+          Input(
+            ctrl: _alcCtrl,
+            label: "Álcool",
+          ),
+          Container(
+              margin: EdgeInsets.all(30),
+              height: 50,
+              decoration: BoxDecoration(
+                  color: Color(0xff00ff5f),
+                  borderRadius: BorderRadius.circular(
+                    60,
+                  )),
+              child: FlatButton(
+                child: Text(
+                  "Preparado para a surpresa?",
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(1.0),
+                    fontSize: 27,
+                    fontFamily: "Big Shoulders Display",
                   ),
                 ),
-              ),
-            ],
-          ),
+                onPressed: () {},
+              ))
         ],
       ),
     );

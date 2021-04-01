@@ -16,10 +16,10 @@ class Logo extends StatelessWidget {
           height: 10,
         ),
         Text(
-          "E aí vey? Hoje é Álcool ou Gasosa?",
+          "Compare os preços e receba sua facada",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 25,
+            fontSize: 30,
             fontFamily: "Big Shoulders Display",
           ),
           textAlign: TextAlign.center,
