@@ -1,6 +1,6 @@
-# one_or_other
+# Gasolina ou Álcool, vey?
 
-A new Flutter project.
+Projeto Flutter a nível de instimular meu desenvolvimento com reprodução de layout, onde é um applicatio que verifica se está mais vantajoso usar álcool ou gasolina, sendo assim, partindo para uma perpesctiva dos memes baianos adaptações.
 
 ## Getting Started
 
