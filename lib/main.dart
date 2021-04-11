@@ -5,6 +5,7 @@ import 'package:one_or_other/widgets/logo.widget.dart';
 import 'package:one_or_other/widgets/submit-file.widget.dart';
 import 'package:one_or_other/widgets/sucess.widget.dart';
 
+import 'pages/home.page.dart';
 import 'widgets/input.widget.dart';
 
 void main() {
@@ -21,29 +22,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       home: HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  var _gasCtrl = new MoneyMaskedTextController();
-  var _alcCtrl = new MoneyMaskedTextController();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xff202326),
-      body: ListView(
-        children: <Widget>[
-          Logo(),
-          SubmitForm(
-            alcCtrl: _alcCtrl,
-            gasCtrl: _gasCtrl,
-            submitFunc: () {},
-            ocupado: false,
-          ),
-        ],
-      ),
     );
   }
 }
